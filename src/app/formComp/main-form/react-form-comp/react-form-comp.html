@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="card" style="width: 70%;">
+       <form [formGroup]="userInfoForm">
+           <div class="row">
+               <div class="col-5">
+                   <label for="name" class="form-label">Name</label>
+                   <input type="text" class="form-control" id="name" formControlName="name">
+                   <div *ngIf="userInfoForm.get('name')?.touched && userInfoForm.get('name')?.invalid" style="color: red;">
+                    <div *ngIf="userInfoForm.get('name')?.errors?.['required']">Name is required</div>
+                   </div>
+               </div>
+               <div class="col-5">
+                   <label for="email" class="form-label">Email address</label>
+                   <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email">
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-5">
+                   <label for="name" class="form-label">gender</label>
+                   <select class="form-select" aria-label="Default select example" formControlName="gender">
+                       <option *ngFor="let option of gender" [value]="option">{{option}}</option>
+                   </select>
+               </div>
+           </div>
+           <div>
+               <button type="button" class="btn btn-primary" (click)="addNewUser()">ADD</button>
+           </div>
+       </form>
+    </div>
+ 
+   </div>
