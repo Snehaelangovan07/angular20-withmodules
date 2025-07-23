@@ -29,3 +29,11 @@
     </div>
  
    </div>
+
+   <table class="table table-hover table-bordered">
+    <tr *ngFor="let item of tableData$ | async">
+        <td>{{ item.id }}</td>
+       <td>{{ item.name }}</td>
+       <td>{{ item.email }}</td>
+    </tr>
+   </table>

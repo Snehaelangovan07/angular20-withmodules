@@ -1,0 +1,16 @@
+{
+  "tableData": [
+    {
+      "id": "1",
+      "name": "Harry Potter",
+      "email": "abc@gmail.com",
+      "gender": "male"
+    },
+    {
+      "id": "2",
+      "name": "xyz",
+      "email": "abc@gmail.com",
+      "gender": "female"
+    }
+  ]
+}
