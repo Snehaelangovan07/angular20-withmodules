@@ -9,6 +9,7 @@ import { tableReducer } from './store/reducer';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { TableEffects } from './store/effect';
+import { MyLib } from 'my-lib';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TableEffects } from './store/effect';
     AppRoutingModule,
     StoreModule.forRoot({ table: tableReducer }),
     EffectsModule.forRoot([TableEffects]),
+    MyLib
   ],
   providers: [
     provideHttpClient(withFetch()),

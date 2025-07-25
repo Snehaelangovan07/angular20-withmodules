@@ -9,4 +9,8 @@ import { Shared } from './formComp/main-form/shared';
 })
 export class App {
   protected readonly title = signal('angular-routes');
+
+  handler(){
+    console.log("clicked")
+  }
 }

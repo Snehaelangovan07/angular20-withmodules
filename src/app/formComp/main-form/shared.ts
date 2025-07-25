@@ -25,6 +25,11 @@ export class Shared {
   addFormData(newData:any) {
     return this.http.post<any>('http://localhost:3000/tableData', newData);
   }
+
+  updateFormData(updatedData: tableData): Observable<any> {
+    return this.http.put<any>(`http://localhost:3000/tableData/${updatedData.id}`, updatedData);
+  }
+  
   customAlert() {
     alert('alerting is coming');
   }

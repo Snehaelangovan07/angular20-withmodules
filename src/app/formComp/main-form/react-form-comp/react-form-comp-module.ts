@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactFormComp } from './react-form-comp';
 import { ReactFormRoutingModule } from './react-form-comp-routing-module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 
 
 
@@ -13,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactFormRoutingModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers: [
+    provideHttpClient()]
 })
 export class ReactFormCompModule {}

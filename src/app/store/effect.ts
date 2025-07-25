@@ -26,6 +26,33 @@ export class TableEffects {
     )
   );
 
- 
+  addData$ = createEffect(() =>
+  this.action$.pipe(
+    ofType(TableActions.addTableData),
+    mergeMap(({ newData }) =>
+      this.sharedService.addFormData(newData).pipe(
+        map(response => TableActions.addTableDataSuccess({ newData: response })),
+        catchError(error => of(TableActions.addTableDataFailure({ error })))
+      )
+    )
+  )
+  );
+
+  editData$ = createEffect(() =>
+  this.action$.pipe(
+    ofType(TableActions.editTableData),
+    mergeMap(({ updatedData }) =>
+      this.sharedService.updateFormData(updatedData).pipe(
+        map(response =>
+          TableActions.editTableDataSuccess({ updatedData: response })
+        ),
+        catchError(error =>
+          of(TableActions.editTableDataFailure({ error }))
+        )
+      )
+    )
+  )
+);
+
 
 }

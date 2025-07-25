@@ -1,6 +1,17 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "btn-lib": [
+        "./dist/btn-lib"
+      ],
+      "button-lib": [
+        "./dist/button-lib"
+      ],
+      "my-lib": [
+        "./dist/my-lib"
+      ]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -20,5 +31,25 @@
     "strictInputAccessModifiers": true,
     "typeCheckHostBindings": true,
     "strictTemplates": true
-  }
+  },
+  "references": [
+    {
+      "path": "./projects/button-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/button-lib/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/btn-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/btn-lib/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/my-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/my-lib/tsconfig.spec.json"
+    }
+  ]
 }

@@ -23,7 +23,7 @@
                </div>
            </div>
            <div>
-               <button type="button" class="btn btn-primary" (click)="addNewUser()">ADD</button>
+               <button type="submit" class="btn btn-primary" (click)="addNewUser()">{{ userInfoForm.get('id')?.value ? 'Update' : 'Add' }}</button>
            </div>
        </form>
     </div>
@@ -31,9 +31,10 @@
    </div>
 
    <table class="table table-hover table-bordered">
-    <tr *ngFor="let item of tableData$ | async">
+    <tr *ngFor="let item of tableData$ | async; let i = index;">
         <td>{{ item.id }}</td>
        <td>{{ item.name }}</td>
        <td>{{ item.email }}</td>
+       <td><button (click)="updateUser(item)">Edit</button></td>
     </tr>
    </table>

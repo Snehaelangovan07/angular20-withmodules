@@ -19,5 +19,16 @@ export const tableReducer = createReducer(
   on(TableActions.loadTableData, state => ({ ...state, loading: true })),
   on(TableActions.loadTableDataSuccess, (state, { data }) => ({ ...state, loading: false, data })),
   on(TableActions.loadTableDataFailure, (state, { error }) => ({ ...state, loading: false, error })),
+  on(TableActions.addTableDataSuccess, (state, { newData }) => ({
+    ...state,
+    data: [...state.data, newData]
+  })),
+  on(TableActions.editTableDataSuccess, (state, { updatedData }) => ({
+    ...state,
+    data: state.data.map(item =>
+      item.id === updatedData.id ? updatedData : item
+    )
+  }))
+  
   
 );
